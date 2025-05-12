@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Tugas 1 Nomor 3</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="message in angka" :key="i">{{message}}</li>
+        </ul>
+    </div>
+    <script>
+        const { createApp, ref } = Vue;
+
+        createApp({
+            setup() {
+                const angka = ref(Array.from({ length: 50 }, (_, message) => message + 1));
+                return {
+                    angka,
+                };
+            },
+        }).mount("#app");
+    </script>
+</body>
+
+</html>
